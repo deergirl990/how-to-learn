@@ -1,31 +1,331 @@
 .page {
   min-width: 1100px;
-  /* мы ещё не умеем делать мобильную версию сайта, */
-  /* поэтому выше установлена минимальная ширина страницы */
   max-width: 1600px;
-  /* выше установили ограничение по максимальной ширине */
-  margin: 0 auto;
-  /* выше для экранов больше 1600px отцентрировали весь контент */
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
-
 .header {
-  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  background-color: #f2f2f2;
   min-height: 600px;
   max-height: 756px;
-  /* выше установили ограничения для секции */
 }
-
-/* ниже мы привели пример двух селекторов, чтобы вы вспомнили запись элемента */
-.header__square-pic {
-  height: 568px;
+.flex {
+  display: flex; 
+}
+.header__logo {
+  width: 183px;
+  height: 32px;
+}
+.header__logo_place_1 {
+  position: absolute;
+  top: 30px;
+  left: 64px;
+}
+.header__title {
+  width: 730px;
+  margin-left: 64px;  
+  align-self: center;
+  line-height: 96px;
+  font-size: 102px;
+  font-weight: bolder;
+}
+.header__subtitle {
+  width: 388px;    
+  line-height: 25px;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  left: 64px;
+  bottom: 30px;
+}
+#square {
   width: 568px;
+  height: 568px;
+  background: #2f80ed;
 }
-
-/* и элемента с модификатором вида ключ-значение */
+.header__square-pic {
+  position: absolute;
+  right: 0;
+  top: 64px;
+  z-index: -1;
+}
+.header__main-illustration {
+  width: 756px;
+  height: 608px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+.description {
+ background-size: 100vh;
+ position: relative;
+ margin: 100px;
+}
+.description__two-columns {
+  display: flex;
+  margin-top: 100px;
+  margin-bottom: 100px; 
+  justify-content: space-between;
+}
+.description__two-columns_brief {
+  width: 175px;
+  font-style: normal;
+  color: #2f80ed;
+  padding-top: 8px;
+  line-height: 1.2;
+  font-size: 18px;
+  font-style: normal;
+  justify-content: space-between;
+}
+.description__two-columns_main-text {
+  width: 80%;
+  min-width: 784px;  
+  justify-content: space-between;  
+}
+.two-columns__paragraph-font {
+  line-height: 34px;
+  font-size: 24px;
+  font-style: normal;
+  padding-bottom: 30px;
+}
+.two-columns__paragraph-font_accent {
+  font-style: bold;
+}
+.digits__section-title {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  margin: 100px auto 20px;
+  line-height: 1.15;
+  font-size: 60px;
+  font-style: bolder;
+}
+.digits__section-subtitle {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 0;
+  line-height: 34px;
+  font-size: 24px;
+  font-style: normal;
+}
+.digits__table {
+  width: 1100px;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 auto 100px auto;
+}
+.digits__table_table-cell {
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 60px auto 0 auto;
+}
+.digits__table-cell_heading {
+  line-height: 1.15;
+  font-size: 24px;
+  font-style: bolder;
+}
+.table__cell-text {
+  line-height: 1.2;
+  font-size: 18px;
+  font-style: normal;
+}
+.feynman {
+  height: 100vh;
+  min-width: 890px;
+  background-color:  #f2f2f2;
+  z-index: -2;
+  background-size: contain;
+  position: relative;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.feynman__flex {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  margin-bottom: 0;
+  z-index: 1;
+}
+.feynman__title {
+  width: 648px;
+  display: flex;
+  justify-content: center;
+  margin: 100px auto auto auto;
+  line-height: 1.15;
+  font-size: 120px;
+  font-style: bolder;
+}
+.feynman__subtitle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 70px auto;
+  line-height: 51px;
+  font-size: 36px;
+  font-style: normal;
+}
+.feynman__link {
+  position: absolute;
+  top: 50%;
+  right: 48px;
+  bottom: 50%;
+  line-height: 51px;
+  font-size: 36px;
+  font-style: normal;
+}
+.feynman__background-image {
+  src: url(./images/feynman.png);
+  background-repeat: no-repeat;
+  width: 867px;
+  height: 637px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.showme {
+   border: solid 1px red; 
+}
+.kaufman {
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  background: black;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: white;
+}
+.kaufman__triangle {
+  position: absolute;
+  z-index: -2;
+  background-image: url(../images/kaufman-triangle.svg);
+  background-size: cover;
+  width: 877px;
+  height: 877px;
+  top: 0;
+  right: -210px;
+}
+.kaufman__section-title_theme_dark {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  margin: 90px auto 20px auto;
+  line-height: 1.15;
+  font-size: 60px;
+  font-style: bolder;
+}
+.kaufman__section-subtitle_theme_dark {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 0 auto;
+  line-height: 34px;
+  font-size: 24px;
+  font-style: normal;
+}
+.kaufman__table_theme_dark {
+  display: flex;
+  width: 1100px;
+  margin: 0 auto 90px auto;
+  padding-left: 0;
+  list-style: none;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.kaufman__table_cell_theme_dark {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+  margin: 80px auto 0 auto;
+  line-height: 1.15;
+  font-size: 24px;
+  font-style: bolder;
+}
+.kaufman__cell_heading_theme_dark {
+  line-height: 1.15;
+  font-size: 24px;
+  font-size: bolder;
+}
+.kaufman__cell_text_theme_dark {
+  line-height: 1.2;
+  font-size: 18px;
+  margin-top: 20px;
+  font-style: normal;
+}
+/* я не то чтобы его использовала: хотя должна была. прописанный код разнес мне таблицу, просто поменять цвета оказалось проще.
+если вы можете прояснить ситуацию, я была бы очень признательна.
 .table__cell_theme_dark {
   width: 200px;
   color: white;
   margin-right: 0;
   margin-top: 80px;
+}*/
+
+footer {
+  min-height: 350px;
+  background-color: black;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: white;
 }
+.footer__columns {
+  display: flex;
+  padding: 60px 70px 40px 70px;
+  position: relative;
+}
+.footer__column_content_copyright {
+  width: 50%;
+}
+.footer__column {
+  width: 50%;
+  text-decoration: none;
+  display: flex;
+}
+.footer_logo {
+  width: 183px;
+  height: 35px;
+}
+.footer__author {
+  position: absolute;
+  left: 70px;
+  bottom: 40px;
+  line-height: 25px;
+  font-size: 18px;
+  font-style: normal;
+}
+.footer__column_content_info {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 30%;
+}
+.footer__column-link {
+  list-style: none;
+}
+.footer__column-heading {
+  line-height: 30px;
+  font-size: 18px;
+  font-style: bolder;
+}
+.footer__column_content_social {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 0;
+}
+.footer__column-links {
+  line-height: 30px;
+  font-size: 18px;
+  font-style: normal;
+}
+
+
